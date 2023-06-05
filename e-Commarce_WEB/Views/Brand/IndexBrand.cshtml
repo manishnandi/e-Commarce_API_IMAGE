@@ -1,0 +1,88 @@
+﻿@model BrandDTO
+@{
+    ViewData["Title"] = "IndexBrand";
+}
+
+<div class="row">
+        <div class="col-md-6"><img src="@Model.NavLogo" class="img-fluid" style="max-width:200px;" /></div>
+        <div class="col-md-6 d-flex justify-content-end"><img src="@Model.Logo" class="img-fluid" style="max-width:200px;" /></div>
+</div>
+
+<form asp-controller="Brand" asp-action="UpdateBrand" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input hidden asp-for="Id" />
+    <input hidden asp-for="NavLogo" />
+    <input hidden asp-for="Logo" />
+
+    <div class="row">
+
+        <div class="col-6 pb-3">
+            <label asp-for="Name" class="col-form-label pt-2" style="font-size:20px;"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="col-6 pb-3">
+            <label asp-for="Slogan" class="col-form-label pt-2" style="font-size:20px;"></label>
+            <input asp-for="Slogan" class="form-control" />
+            <span asp-validation-for="Slogan" class="text-danger"></span>
+        </div>
+
+        <div class="col-6 pb-3">
+            <label asp-for="Address" class="col-form-label pt-2" style="font-size:20px;"></label>
+            <input asp-for="Address" class="form-control" />
+            <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
+
+        <div class="col-6 pb-3">
+            <label asp-for="Phone" class="col-form-label pt-2" style="font-size:20px;"></label>
+            <input asp-for="Phone" class="form-control" />
+            <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
+
+        <div class="col-6 pb-3">
+            <label asp-for="Email" class="col-form-label pt-2" style="font-size:20px;"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="col-6 pb-3">
+            <label asp-for="ContactPerson" class="col-form-label pt-2" style="font-size:20px;"></label>
+            <input asp-for="ContactPerson" class="form-control" />
+            <span asp-validation-for="ContactPerson" class="text-danger"></span>
+        </div>
+
+        <div class="col-6 pb-3">
+            <label asp-for="FileNavLogo" class="col-form-label pt-2" style="font-size:20px;"></label>
+            <input type="file" asp-for="FileNavLogo" class="form-control" name="FileNavLogo" />
+            <span asp-validation-for="FileNavLogo" class="text-danger"></span>
+        </div>
+
+        <div class="col-6 pb-3">
+            <label asp-for="FileLogo" class="col-form-label pt-2" style="font-size:20px;"></label>
+            <input type="file" asp-for="FileLogo" class="form-control" name="FileLogo" />
+            <span asp-validation-for="FileLogo" class="text-danger"></span>
+        </div>
+
+        <div class="row p-0 m-0 ps-2">
+            <div class="col-3 pb-3 form-check">
+                <input type="checkbox" class="form-check-input" asp-for="IsShowNavLogo">
+                <label class="form-check-label" asp-for="IsShowNavLogo">Show Nav Logo</label>
+            </div>
+
+            <div class="col-3 pb-3 form-check">
+                <input type="checkbox" class="form-check-input" asp-for="IsShowLogo">
+                <label class="form-check-label" asp-for="IsShowLogo">Show Logo</label>
+            </div>
+
+            <div class="col-6 pb-3">
+                <input type="submit" value="Update" class="btn btn-success w-100" />
+            </div>
+        </div>
+
+    </div>
+</form>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
