@@ -48,50 +48,6 @@ namespace e_Commarce_WEB.Controllers
 
             TempData["error"] = "Error encourted.";
             return View("IndexBrand", dto);
-
-
-
-            //if(fileNavLogo != null)
-            //{
-            //    //UPLOAD IMAGE
-            //    string wwwRootPath = _webHostEnvironment.WebRootPath;
-            //    var uploads = Path.Combine(wwwRootPath, @"images\");
-            //    string fileName;
-
-            //    //UPLOAD NavLogo
-            //    fileName = Guid.NewGuid().ToString();
-            //    var fileExtensionhumbnail = Path.GetExtension(fileNavLogo.FileName);
-            //    var fileSizeThumbnail = fileNavLogo.Length;
-            //    if ((fileExtensionhumbnail == ".jpg" || fileExtensionhumbnail == ".jpeg" || fileExtensionhumbnail == ".png") && fileSizeThumbnail < 2097152)
-            //    {
-            //        using (var fileStream = new FileStream(Path.Combine(uploads + fileName + fileExtensionhumbnail), FileMode.Create))
-            //        {
-            //            fileNavLogo.CopyTo(fileStream);
-            //        };
-            //        dto.NavLogo = @"\images\" + fileName + fileExtensionhumbnail;
-            //    }
-            //}
-
-            //if(fileLogo != null)
-            //{
-            //    //UPLOAD LOGO
-            //    string wwwRootPath = _webHostEnvironment.WebRootPath;
-            //    var uploads = Path.Combine(wwwRootPath, @"images\");
-            //    string fileName;
-
-            //    //UPLOAD NavLogo
-            //    fileName = Guid.NewGuid().ToString();
-            //    var fileExtensionhumbnail = Path.GetExtension(fileLogo.FileName);
-            //    var fileSizeThumbnail = fileLogo.Length;
-            //    if ((fileExtensionhumbnail == ".jpg" || fileExtensionhumbnail == ".jpeg" || fileExtensionhumbnail == ".png") && fileSizeThumbnail < 2097152)
-            //    {
-            //        using (var fileStream = new FileStream(Path.Combine(uploads + fileName + fileExtensionhumbnail), FileMode.Create))
-            //        {
-            //            fileLogo.CopyTo(fileStream);
-            //        };
-            //        dto.Logo = @"\images\" + fileName + fileExtensionhumbnail;
-            //    }
-            //}
         }
     }
 }
